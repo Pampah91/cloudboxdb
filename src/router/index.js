@@ -11,6 +11,10 @@ const routes = [
     path: '/mydashboard',
     name: 'Dashboard',
     component: () => import(/*webpackChunckName: "dashboard" */ '../views/Dashboard.vue')
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: '/'
   }
 ]
 

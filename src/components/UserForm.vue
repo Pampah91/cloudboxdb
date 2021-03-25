@@ -1,8 +1,7 @@
 <!-- Composant réutilisable : formulaire de connexion -->
 
 <template>
-  <h1>Bienvenue sur Cloudbox, authentifiez-vous</h1>
-  
+<h1>Bienvenue sur Cloudbox ! Authentifiez-vous</h1>
   <div class="login-page">
   <div class="form">
     <form class="login-form">
