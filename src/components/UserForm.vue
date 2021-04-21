@@ -5,9 +5,9 @@
   <div class="login-page">
   <div class="form">
     <form class="login-form">
-      <input type="text" placeholder="Nom d'utilisateur"/>
-      <input type="password" placeholder="Mot de passe"/>
-      <button>Se connecter</button>
+      <input type="text" id="user" placeholder="Nom d'utilisateur"/>
+      <input type="password" id="pw" placeholder="Mot de passe"/>
+      <button v-on:click="onLinkClicked()">Se connecter</button>
       <p class="message">Mot de passe oublié? <a href="#">Nous contacter</a></p>
     </form>
   </div>
@@ -18,7 +18,19 @@
 export default {
   name: "UserForm",
 
-  methods: {},
+  methods: {
+    onLinkClicked: function() {
+      var username = document.getElementById("user");
+      var password = document.getElementById("pw");
+      if(username.value == "admin" && password.value == "cloudbox") {
+        // If not authenticated, add a path where to redirect after login.
+        this.$router.push({ name: 'Dashboard'});
+      }
+      else{
+        alert("Identifiants incorrects")
+      }
+    }
+  },
 };
 </script>
 

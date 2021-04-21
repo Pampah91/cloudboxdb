@@ -9,15 +9,15 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>My dashboard</p>
+                    <p>Mon tableau de bord</p>
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" >Home</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">A propos</a>
                     </li>
                     <li>
-                        <a href="#">My planes</a>
+                        <a href="#">Mes avions</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -25,15 +25,15 @@
                 </ul>
 
                 <ul class="list-unstyled CTAs">
-                    <li><a href="#" class="download">Lien 1</a></li>
-                    <li><a href="#" class="article">Lien 2</a></li>
+                    <li><a href="#" class="download">Liste des vols</a></li>
+                    <li><a href="#" class="article">Rapports d'incidents</a></li>
                 </ul>
             </nav>
 
   <div class="main">
-    <div class="datablock">MyData1</div>
-    <div class="datablock">MyData2</div>
-    <div class="datablock">MyData3</div>
+    <div class="datablock" id="currenttime">{{heure}}</div>
+    <div class="datablock" id="compte">{{planeName}}</div>
+    <div class="datablock">{{planeStatus}}</div>
   </div>
 
   
@@ -46,13 +46,6 @@
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfOE4BVepm36hiMbfzdpyvomHDBCgT4-wt5kap4AG8bz0pzfzKd4T0S0JQU_QjKuMrqKVysY0jf8H4/pubchart?oid=1304253821&amp;format=interactive">
         </iframe>
     </div>
-
-
- 
-
-
-
-
 </template>
 
 <script>
@@ -64,6 +57,27 @@ export default {
   name: 'Dashboard',
   components: {
     
+  },
+  data: function(){
+      return{
+        heure: '',
+        planeName:' Avion : POC1',
+        planeStatus: 'Statut : en vol'
+      }
+    
+  },
+  created() {
+    setInterval(() => {
+      this.getNow();
+    }, 1000)
+  },
+  methods:{
+    getNow: function() {
+      const today = new Date();;
+      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      const dateTime = time;
+      this.heure = dateTime;
+    },
   }
 }
 
@@ -92,7 +106,11 @@ export default {
     width: 300px;
     height: 220px;
     margin-right: 80px;
+    font-size: 220%;
+    vertical-align: middle;
   }
+
+
 
   .frames{
     margin-left: 130px;
