@@ -33,7 +33,26 @@
   <div class="main">
     <div class="datablock">MyData1</div>
     <div class="datablock">MyData2</div>
+    <div class="datablock">MyData3</div>
   </div>
+
+  
+    <div class="frames">
+        <iframe class="graph" seamless frameborder="0" scrolling="no" 
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfOE4BVepm36hiMbfzdpyvomHDBCgT4-wt5kap4AG8bz0pzfzKd4T0S0JQU_QjKuMrqKVysY0jf8H4/pubchart?oid=1229632621&amp;format=interactive">
+        </iframe>
+
+        <iframe class="graph" seamless frameborder="0" scrolling="no" 
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfOE4BVepm36hiMbfzdpyvomHDBCgT4-wt5kap4AG8bz0pzfzKd4T0S0JQU_QjKuMrqKVysY0jf8H4/pubchart?oid=1304253821&amp;format=interactive">
+        </iframe>
+    </div>
+
+
+ 
+
+
+
+
 </template>
 
 <script>
@@ -56,8 +75,15 @@ export default {
     background-color: #166088;
   }
 
+  h1{
+      color:#ddd;
+      margin-left:120px;
+      padding-bottom: 30px;
+      text-align:center;
+  }
+
   .main{
-    margin-left: 10px;
+    margin-left: 200px;
   }
 
   .datablock{
@@ -65,7 +91,21 @@ export default {
     background-color: #4a6fa5;
     width: 300px;
     height: 220px;
-    margin-right: 20px;
+    margin-right: 80px;
+  }
+
+  .frames{
+    margin-left: 130px;
+  }
+ 
+  .graph{
+    width: 600px;
+    height: 371px;
+    -ms-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
   }
 
 
